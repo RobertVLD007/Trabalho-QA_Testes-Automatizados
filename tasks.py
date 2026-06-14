@@ -51,11 +51,12 @@ def zip_windows(c, name=None):
     print(f"→ Criando ZIP: {zip_path}")
 
     excludes = [
-        "venv",
+        ".venv",
         "__pycache__",
         ".git",
         ".vscode",
-        "delivery.egg-info"
+        ".pytest_cache",
+        "dist",
     ]
 
     with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zipf:
