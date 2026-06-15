@@ -42,7 +42,7 @@ def test_ct003_login_campos_vazios(browser):
     erro = browser.find_element(By.CSS_SELECTOR, "[data-test='error']").text
     assert "Username is required" in erro or "Password is required" in erro
 
-@pytest.mark.parametrize("usuario", [usernames["usuario_bloqueado"]])
+@pytest.mark.parametrize("usuario", usernames.values())
 def test_ct004_login_usuario_bloqueado(browser, usuario):
     """CT-004: Validar o acesso com utilizador bloqueado"""
 
